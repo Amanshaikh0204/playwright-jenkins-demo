@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "playwright-jenkins-demo", "playwright-jenkins-demo.csproj", "{7FA737C1-B247-4D61-AB3A-B73E595DDEF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FA737C1-B247-4D61-AB3A-B73E595DDEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA737C1-B247-4D61-AB3A-B73E595DDEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA737C1-B247-4D61-AB3A-B73E595DDEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA737C1-B247-4D61-AB3A-B73E595DDEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18C7B88F-5728-46F8-BAF0-06BFB5EB6102}
+	EndGlobalSection
+EndGlobal
