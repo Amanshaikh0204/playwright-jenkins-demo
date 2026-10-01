@@ -31,5 +31,11 @@ namespace playwright_jenkins_demo
             // Expects the URL to contain intro.
             await Expect(page).ToHaveURLAsync(new Regex(".*intro"));
         }
+
+        [Test]
+        public async Task NewTest()
+        {
+            //do later
+        }
     }
 }
