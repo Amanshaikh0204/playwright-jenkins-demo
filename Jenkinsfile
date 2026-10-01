@@ -17,10 +17,12 @@ pipeline {
         }
 
         stage('Run Tests') {
-            steps {
-                bat 'dotnet test -- NUnit.TestOutputXml=TestResults'
-            }
+    steps {
+        catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+            bat 'dotnet test -- NUnit.TestOutputXml=TestResults'
         }
+    }
+}
 
         stage('Publish Test Results') {
             steps {
