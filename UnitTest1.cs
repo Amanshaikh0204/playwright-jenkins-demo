@@ -29,7 +29,7 @@ namespace playwright_jenkins_demo
             await getStarted.ClickAsync();
 
             // Expects the URL to contain intro.
-            await Expect(page).ToHaveURLAsync(new Regex(".*intro"));
+            await Expect(page).ToHaveURLAsync(new Regex(".*intro123"));
         }
 
         [Test]
