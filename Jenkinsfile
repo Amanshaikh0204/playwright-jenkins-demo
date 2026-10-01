@@ -18,8 +18,15 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'dotnet test'
+                bat 'dotnet test -- NUnit.TestOutputXml=TestResults\\test-result.xml'
             }
         }
+
+        stage('Publish Test Results') {
+            steps {
+                nunit testResultsPattern: 'TestResults/*.xml'
+            }
+        }
+
     }
 }
