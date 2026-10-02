@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Build') {
             steps {
                 bat 'dotnet restore'
@@ -17,25 +16,24 @@ pipeline {
         }
 
         stage('Run Tests') {
-    steps {
-        catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
-            bat 'dotnet test -- NUnit.TestOutputXml=TestResults'
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+                    bat 'dotnet test -- NUnit.TestOutputXml=TestResults'
+                }
+            }
         }
-    }
-}
 
         stage('Publish Test Results') {
             steps {
                 nunit testResultsPattern: 'bin/Debug/net9.0/TestResults/*.xml'
             }
         }
-
-        post {
-    always {
-        archiveArtifacts artifacts: 'bin/Debug/net9.0/TestResults/Screenshots/**/*.png',
-                         allowEmptyArchive: true
     }
-}
 
+    post {
+        always {
+            archiveArtifacts artifacts: 'bin/Debug/net9.0/TestResults/Screenshots/**/*.png',
+                             allowEmptyArchive: true
+        }
     }
 }
