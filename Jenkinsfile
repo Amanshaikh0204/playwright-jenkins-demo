@@ -30,5 +30,12 @@ pipeline {
             }
         }
 
+        post {
+    always {
+        archiveArtifacts artifacts: 'bin/Debug/net9.0/TestResults/Screenshots/**/*.png',
+                         allowEmptyArchive: true
+    }
+}
+
     }
 }
