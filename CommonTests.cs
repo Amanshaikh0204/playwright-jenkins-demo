@@ -4,7 +4,8 @@ using System.Text.RegularExpressions;
 
 namespace playwright_jenkins_demo
 {
-    [Parallelizable(ParallelScope.Self)]
+    [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+    [Parallelizable(ParallelScope.Children)]
     [TestFixture]
     public class CommonTests : BaseSetup
     {
