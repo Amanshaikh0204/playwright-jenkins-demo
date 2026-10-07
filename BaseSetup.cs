@@ -14,11 +14,7 @@ namespace playwright_jenkins_demo
         {
             Playwright = await Microsoft.Playwright.Playwright.CreateAsync();
 
-            Browser = await Playwright.Chromium.LaunchAsync(
-                new BrowserTypeLaunchOptions
-                {
-                    Headless = false
-                });
+            Browser = await Playwright.Chromium.LaunchAsync();
 
             Page = await Browser.NewPageAsync();
         }
